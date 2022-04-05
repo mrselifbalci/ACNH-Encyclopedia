@@ -670,9 +670,12 @@ body.active-modal {
 }
 
 .popup-img-container {
-	max-width: 50%;
+	width: 50%;
 	border-radius: 1.6rem;
 	background-color: var(--wheat);
+	background-image: url("https://svgshare.com/i/fPy.svg");
+	background-repeat: repeat;
+	background-size: 200%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -687,42 +690,34 @@ body.active-modal {
 	display: flex;
 	flex-direction: column;
 	width: 50%;
-	gap: 4rem;
+	gap: 3em;
+}
+
+.popup-entry-icon {
+	height: 6rem;
+	width: 6rem;
+}
+
+.popup-entry-icon-reversed {
+	height: 6rem;
+	width: 6rem;
+	transform: scaleX(-1);
 }
 
 .info-title {
-	margin-top: 2rem;
 	display: flex;
 	gap: 4rem;
 	justify-content: center;
-}
-
-.rotate {
-	transform: rotateZ(-3deg);
-	margin-top: 2rem;
+	align-items: center;
 }
 
 .popup-name {
-	align-self: center;
-	position: relative;
 	font-size: 3rem;
-	justify-self: center;
-	z-index: 4;
-	color: var(--super-light-wheat);
-}
-
-.popup-name:before {
-	content: "";
-	z-index: -1;
-	left: -3.2rem;
-	top: 0.1rem;
-	border-width: 2rem;
-	border-style: solid;
-	border-color: var(--dark-blue);
-	position: absolute;
-	width: 120%;
-	border-left-color: transparent;
-	border-right-color: transparent;
+	color: var(--dark-brown);
+	font-family: "FinkHeavy";
+	font-weight: 400;
+	font-style: normal;
+	width: max-content;
 }
 
 .data-container {
@@ -730,19 +725,65 @@ body.active-modal {
 	grid-template-columns: 1fr 2fr;
 	align-self: flex-start;
 	text-align: left;
-	column-gap: 5rem;
+	column-gap: 4rem;
 	row-gap: 2rem;
 	font-size: 1.8rem;
 	color: var(--super-dark-gray);
+	padding-bottom: 2rem;
 }
 
 .data-title {
-	color: var(--super-light-wheat);
-	background-color: var(--dark-blue);
+	color: var(--dark-brown);
+	background-color: var(--wheat);
 	padding: 0.2rem 0.5rem;
 	width: max-content;
+	height: max-content;
 }
 
 .data-paragraph {
 	font-style: italic;
+}
+
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+@media screen and (max-width: 950px) {
+	.popup-container {
+		flex-direction: column;
+		align-items: center;
+		padding: 0;
+	}
+
+	.box {
+		width: 70%;
+		margin: 0 auto;
+		height: auto;
+		max-height: 80vh;
+		margin-top: calc(100vh - 85vh - 20px);
+		background: var(--light-wheat);
+		border-radius: 1.6rem;
+		padding: 4rem 0rem;
+		overflow: auto;
+	}
+
+	.close-icon {
+		right: calc(15% - 1.5rem);
+		top: calc(100vh - 85vh - 33px);
+	}
+
+	.popup-img-container {
+		width: 85%;
+	}
+
+	.popup-img {
+		max-height: 50%;
+		max-width: 50%;
+	}
+
+	.info-container {
+		width: 85%;
+	}
 }

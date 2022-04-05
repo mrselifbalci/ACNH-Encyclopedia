@@ -5,10 +5,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import mainData from "./MainData";
 import MainCard from "./components/Main/MainCard";
 import Encyclopedia from "./components/Encyclopedia/Encyclopedia";
-/* import ItemDetails from "./components/Encyclopedia/ItemDetails"; */
 
 function App() {
-	const [data, setMainData] = useState(mainData);
+	const [data] = useState(mainData);
 
 	return (
 		<div className="page-content">
@@ -31,7 +30,6 @@ function App() {
 						}
 					/>
 					<Route path="/encyclopedia/:encyclopediaPage" element={<Encyclopedia data={data} />} />
-					{/* 					<Route path="/encyclopedia/:encyclopediaPage/:itemPage" element={<ItemDetails data={data} />} /> */}
 				</Routes>
 			</BrowserRouter>
 		</div>

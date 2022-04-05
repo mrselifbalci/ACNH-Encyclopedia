@@ -1,4 +1,5 @@
 import React from "react";
+import PopupData from "./PopupData";
 
 const Popup = ({ handleClose, namePage, posts, currentCard }) => {
 	return (
@@ -14,36 +15,20 @@ const Popup = ({ handleClose, namePage, posts, currentCard }) => {
 					<div className="info-container">
 						<div className="info-title">
 							<img
-								className="entry-icon"
+								className="popup-entry-icon"
 								src={namePage === "fossils" ? currentCard.image_uri : currentCard.icon_uri}
 								alt={namePage}
 							/>
-							<div className="rotate">
-								<p>
-									<span className="popup-name">
-										{currentCard.name["name-USen"].charAt(0).toUpperCase() + currentCard.name["name-USen"].slice(1)}
-									</span>
-								</p>
-							</div>
+							<p className="popup-name">
+								{currentCard.name["name-USen"].charAt(0).toUpperCase() + currentCard.name["name-USen"].slice(1)}
+							</p>
 							<img
-								className="entry-icon"
+								className="popup-entry-icon-reversed"
 								src={namePage === "fossils" ? currentCard.image_uri : currentCard.icon_uri}
 								alt={namePage}
 							/>
 						</div>
-						<div className="data-container">
-							<p className="data-title">Price:</p>
-							<p className="data-paragraph">{currentCard.price}</p>
-							<p className="data-title">Shadow:</p>
-							<p className="data-paragraph">{currentCard.shadow}</p>
-							<p className="data-title">Speed:</p>
-							<p className="data-paragraph">{currentCard.speed}</p>
-							<p className="data-title">Month:</p>
-							<p></p>
-							<p></p>
-							<p></p>
-							<p className="data-title">Time:</p>
-						</div>
+						<PopupData currentCard={currentCard} namePage={namePage} />
 					</div>
 				</div>
 			</div>
