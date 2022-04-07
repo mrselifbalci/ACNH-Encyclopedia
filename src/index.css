@@ -355,7 +355,7 @@ Encyclopedia
 	display: flex;
 	gap: 2rem;
 	padding-bottom: 2rem;
-	min-height: 62vh;
+	min-height: 64vh;
 }
 
 .filters-container {
