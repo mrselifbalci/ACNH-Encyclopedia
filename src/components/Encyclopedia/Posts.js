@@ -12,13 +12,6 @@ export const Posts = ({ namePage, posts, loading, searchTerm, addToFavourites })
 		setCurrentCard(card);
 	};
 
-	if (loading) {
-		return (
-			<div className="loading">
-				<h2>Loading...</h2>
-			</div>
-		);
-	}
 	return (
 		<div className="items-container">
 			{posts
@@ -27,7 +20,8 @@ export const Posts = ({ namePage, posts, loading, searchTerm, addToFavourites })
 						return val;
 					} else if (val.name["name-USen"].toLowerCase().trim().includes(searchTerm.toLowerCase().trim())) {
 						return val;
-					} else;
+					}
+					return false;
 				})
 				.map((post) => {
 					return (
