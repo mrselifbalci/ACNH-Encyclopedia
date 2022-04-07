@@ -32,7 +32,7 @@ export default function Encyclopedia({ data }) {
 			setLoading(false);
 		};
 		fetchPosts();
-	}, []);
+	}, [url]);
 
 	// Get current posts
 	const indexOfLastPost = currentPage * postsPerPage;

@@ -27,7 +27,7 @@ export const Posts = ({ namePage, posts, loading, searchTerm, addToFavourites })
 						return val;
 					} else if (val.name["name-USen"].toLowerCase().trim().includes(searchTerm.toLowerCase().trim())) {
 						return val;
-					}
+					} else;
 				})
 				.map((post) => {
 					return (
